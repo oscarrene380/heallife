@@ -62,7 +62,7 @@
             <?php
       }
       ?>
-            <form action="aplication/controladores/loginProcess.php" method="post">
+            <form action="<?= URL.'login' ?>" method="post">
                 <div class="form-group has-feedback">
                     <input type="text" name="dui" class="form-control" placeholder="Usuario">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -77,8 +77,9 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" name="Login"
-                            class="btn btn-primary btn-block btn-flat bg-green">Ingresar</button>
+                        <button type="submit" name="login" class="btn btn-primary btn-block btn-flat bg-green">
+                            Ingresar
+                        </button>
                     </div>
                     <!-- /.col -->
                 </div>

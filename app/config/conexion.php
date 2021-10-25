@@ -29,7 +29,8 @@ class Conexion
 
     public function conectar()
     {
-        try {
+        try 
+        {
             $this->con = mysqli_connect($this->host, $this->user, $this->pwd, $this->bd);
 
             if ($this->con)
@@ -43,10 +44,12 @@ class Conexion
 
     public function desconectar()
     {
-        try {
+        try 
+        {
             if (!mysqli_close($this->con))
                 throw new Exception('No fue posible conectarse a la base de datos');
-        } catch (Exception $e) {
+        } catch (Exception $e) 
+        {
             echo '<h4>Error [ ' . $e->getMessage() . ' ]</h4>';
         }
     }

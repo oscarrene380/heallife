@@ -8,10 +8,16 @@ if ($_GET)
     {
         switch ($_GET['url']) 
         {
-            case 'login':
-                require_once 'views/login.php';
+            case 'home':
+                echo 'Pagina principal';
                 break;
-
+            case 'login':
+                header("Location: ".URL."home");
+                break;
+            case 'logout':
+                session_destroy();
+                header("Location: ".URL."login");
+                break;
             default: 
                 echo 'Pagina no encontrada';
                 break;
@@ -19,7 +25,16 @@ if ($_GET)
     }
     else
     {
-        require_once 'views/login.php';
+       switch($_GET['url'])
+       {
+            case 'login':
+                require_once 'views/login.php';
+                break;
+
+            default:
+            echo 'Pagina no encontrada';
+                break;
+       }
     }
 } 
 else 
